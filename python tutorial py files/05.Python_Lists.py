@@ -15,15 +15,18 @@
 # We use (remove) to remove elements by value
 
 
-a=[2,4,6,8,"Bassam","Data science",[2,3,4]] # this is how we make list
-print(type(a))
-print(a[4])
+# This is how we make list:
+a=[2,4,6,8,"Bassam","Data science",[2,3,4]] 
+print(type(a)) # Output: <class 'list'>
 
-# TO print the list :
+# This is how we access the elements of the list (vartiable[index]):
+print(a[4]) # Output: Bassam
+
+# To print the lists elements one by one:
 for i in range(len(a)) :
     print(a[i]) # Output: 2, 4, 6, 8, Bassam, Data science
     
-print(a)  # Output: [2, 4, 6, 8, 'Bassam', 'Data science']
+
 
 # This how we use append to add elements
 a.append("murad")
@@ -43,26 +46,29 @@ a.extend([2,3,4]) # It will add 2,3,4
 print(a) # Output: [2, 4, 6, 8, 'Bassam', 'Data science', [2, 3, 4], 2, 3, 4]
 
 # Note: if you use extend  to add string value it will be added as char because string is a array of char
-a.extend('murad') #it will be added like this(m,u,r,a,d)
+a.extend('murad') # It will add "m", "u", "r", "a", "d"
 
 # We can use (pop) and (remove) to delete elememts
 a.pop(1)           #its delete by the digit
-a.remove('Bassam') #its delete the speicefic elememt
+a.remove('Bassam') #its delete the specific elememt
 
 #---------------------------------
 # a) List operations:
 #---------------------------------
 
-# We can compine lists:
+# We can combine lists:
 a1=[1,2,3]
 b1=[4,6,7]
 
 a2=a1+b1
 print(a2) # Output: [1, 2, 3, 4, 6, 7]
 
-# Note: Using extend to compine Lists is faster and better
-a2=a1.extend(b1)
-print(a2) # Output: None (because extend modifies the list in place)
+# Note: Using extend to combine Lists is faster and better
+a1 = [1,2,3]
+b1 = [4,6,7]
+
+a1.extend(b1)  
+print(a1)  # Output: [1, 2, 3, 4, 6, 7]
 
 # you can make an empty list and fill it whenever you want:
 a_list=[]
@@ -118,7 +124,7 @@ print(newlst) # Output: ['apple', 'bannana', 'mangi']
 
 # With list comprehantion:
 my_lst=[item for item in f if 'a' in item]
-print('my_list') # Output: ['apple', 'bannana', 'mangi']
+print(my_lst) # Output: ['apple', 'bannana', 'mangi']
 
 
 # List comprehension Example (2):
