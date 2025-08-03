@@ -19,6 +19,13 @@
 a=[2,4,6,8,"Bassam","Data science",[2,3,4]] 
 print(type(a)) # Output: <class 'list'>
 
+# you can make an empty list and fill it whenever you want:
+a_list=[]
+print(a_list) # Output: []
+# or
+a_list=list()
+
+
 # This is how we access the elements of the list (vartiable[index]):
 print(a[4]) # Output: Bassam
 
@@ -70,11 +77,6 @@ b1 = [4,6,7]
 a1.extend(b1)  
 print(a1)  # Output: [1, 2, 3, 4, 6, 7]
 
-# you can make an empty list and fill it whenever you want:
-a_list=[]
-print(a_list) # Output: []
-# or
-a_list=list()
 
 
 #---------------------------------
