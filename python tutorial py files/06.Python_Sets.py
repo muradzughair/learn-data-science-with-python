@@ -1,92 +1,100 @@
-#-------------------------------------------------------
-#4) sets
-#-------------------------------------------------------
+# ------------------------------------------------------------
+# Sets:
+# ------------------------------------------------------------
 
+# Definition:
 # 1) Sets are unordered collections of unique elements.
-
 # 2) They do not allow duplicates.
-
 # 3) Sets are mutable (you can add or remove elements, but not change them directly).
-
-# Use sets when you want to remove duplicates or do mathematical set operations (union, intersection, difference).
-
-# When to use: When you need a collection of unique items and don’t care about order and you want to use sets operation like (and, or, not ).
-
-# Real-life scenario: system to see the matual friends between two people.
-
-
-
-#--------------------------------------
-#This is how we make a set:
-a={3,5,6,7,9,11}
-print(a)
+#
+# Use sets when:
+# - You want to remove duplicates automatically.
+# - You want to perform mathematical set operations (union, intersection, difference).
+# - You don’t care about order of elements.
+#
+# Real-life scenario:
+# Finding mutual friends between two people (intersection of friend lists).
 
 
-#--------------------------------------
-# We use add function to add elements to the set:
-a.add(12)   
-print(a) # Output: {3, 5, 6, 7, 9, 11, 12}
+# ------------------------------------------------------------
+# a) Creating Sets
+# ------------------------------------------------------------
 
-# we use update to add multiple elements:
-a.update([13,14,15])    
-print(a) # Output: {3, 5, 6, 7, 9, 11, 12, 13, 14, 15}
+a = {3, 5, 6, 7, 9, 11}
+print(a)  # Output: {3, 5, 6, 7, 9, 11}
 
-# ANd as I said sets are unordered collections of unique elements, so if you try to add duplicate elements, they will be ignored.:
-this_set={"apple","banana","cherry"}
-myset={"kiwi","orange","banana"}
-this_set.update(myset) 
-print(this_set) # Output: {'banana', 'cherry', 'kiwi', 'orange', 'apple', 'pear'}
+# Empty set → must use set(), {} creates a dictionary
+empty_set = set()
+print(empty_set)  # Output: set()
 
-#note: you can use update to add list, tuple, set, or dictionary to the set:
-my_list=['hi']
+
+# ------------------------------------------------------------
+# b) Adding Elements
+# ------------------------------------------------------------
+
+# Add a single element
+a.add(12)
+print(a)  # Output: {3, 5, 6, 7, 9, 11, 12}
+
+# Add multiple elements (list, tuple, set, or dict keys)
+a.update([13, 14, 15])
+print(a)  # Output: {3, 5, 6, 7, 9, 11, 12, 13, 14, 15}
+
+# Adding another set (duplicates ignored)
+this_set = {"apple", "banana", "cherry"}
+myset = {"kiwi", "orange", "banana"}
+this_set.update(myset)
+print(this_set)  # Output: {'banana', 'cherry', 'kiwi', 'orange', 'apple'}
+
+# Adding from a list
+my_list = ["hi"]
 this_set.update(my_list)
 print(this_set)
 
-#---------------------------------------
-# We use remove to remove elements from the set:
-thisset = {"apple", "banana", "cherry", 'orange'}
+
+# ------------------------------------------------------------
+# c) Removing Elements
+# ------------------------------------------------------------
+
+thisset = {"apple", "banana", "cherry", "orange"}
+
+# Remove an item (KeyError if not found)
 thisset.remove("banana")
-print(thisset) # Output: {'cherry', 'orange', 'apple'}
-# But if we remove unexist element it will give you keyError to solve this use (discard)
-#The discard() method removes the specified item from the set:
-thisset = {"apple", "banana", "cherry", 'orange'}
-thisset.discard("ana") # Its not exist vlaue
-print(thisset) # Output: {'cherry', 'orange', 'apple', 'banana'} without error
+print(thisset)  # Output: {'cherry', 'orange', 'apple'}
+
+# Discard an item (no error if not found)
+thisset.discard("ana")
+print(thisset)  # Output: {'cherry', 'orange', 'apple'}
 
 
-#----------------------------------
-# Sets operations:
-#----------------------------------
+# ------------------------------------------------------------
+# d) Checking Membership
+# ------------------------------------------------------------
 
-fruits = {"apple", "banana", "orange", "apple"}  
-
-
-# -----------------------------
-# Checking Membership
-
+fruits = {"apple", "banana", "orange"}
 print("apple" in fruits)   # True
-print("banana" in fruits)  # False
+print("pear" in fruits)    # False
 
+
+# ------------------------------------------------------------
+# e) Set Operations
+# ------------------------------------------------------------
 
 A = {1, 2, 3, 4}
 B = {3, 4, 5, 6}
 
-#----------------------------------
-# Union: all unique elements from both sets
-print(A | B)        # {1, 2, 3, 4, 5, 6}
-print(A.union(B))   # same result
+# Union → all unique elements from both sets
+print(A | B)          # {1, 2, 3, 4, 5, 6}
+print(A.union(B))
 
-#----------------------------------
-# Intersection: elements common to both sets
-print(A & B)        # {3, 4}
-print(A.intersection(B))  
+# Intersection → elements common to both sets
+print(A & B)          # {3, 4}
+print(A.intersection(B))
 
-#----------------------------------
-# Difference: elements in A but not in B
-print(A - B)        # {1, 2}
+# Difference → elements in A but not in B
+print(A - B)          # {1, 2}
 print(A.difference(B))
 
-#----------------------------------
-# Symmetric Difference: elements in A or B, but not both
-print(A ^ B)        # {1, 2, 5, 6}
+# Symmetric Difference → elements in A or B but not both
+print(A ^ B)          # {1, 2, 5, 6}
 print(A.symmetric_difference(B))
